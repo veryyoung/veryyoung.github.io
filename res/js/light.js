@@ -54,14 +54,6 @@ $(document).ready(function() {
         fade: 1500,
         duration: 15000,
     })
-    
-    
-    if($('#disqus_thread').length > 0){
-        var disqus_shortname = 'veryyoung';
-        $.ajaxSetup({ cache: true });
-        $.getScript('https://' + disqus_shortname + '.disqus.com/embed.js');
-    }
-
 
 });
 

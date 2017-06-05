@@ -11,7 +11,13 @@ blog:
     description:  永远年轻，永远探索！                                 # 博客描述
     title:        永远年轻，永远探索！                  # 网页标题
     url:          http://veryyoung.me                               # 博客地址
-    duoshuo:      veryyoung                                         # 多说ID
+    gitment:                                                        # Gitment 
+        owner:  veryyoung
+        repo:  veryyoung.github.io
+        oauth: 
+            client_id: 0da5b2d33965ff6ad68f
+            client_secret: 2da6847a7db9b4c7cb48b055bb5c0b30b528d485
+
 author:
     name:         veryyoung                                         # 作者名称
     email:        veryyoung.me@gmail.com                            # 邮箱地址
