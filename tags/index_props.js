@@ -22,7 +22,7 @@ export default {
     'contributors': [
         "veryyoung"
     ],
-    'date': "2021-08-30T14:35:42.000Z",
+    'date': "2021-08-30T12:42:10.000Z",
     'updated': null,
     'excerpt': "",
     'cover': undefined,
