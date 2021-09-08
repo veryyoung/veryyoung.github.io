@@ -30,10 +30,10 @@ export default {
         "isPost": false,
         "posts": [
             {
-                "pagePath": "posts/cqc.md",
-                "title": "Test blog",
-                "link": "posts/cqc.html",
-                "date": "2021-08-30T00:00:00.000Z",
+                "pagePath": "posts/introduction-to-bitcoin.md",
+                "title": "比特币简介",
+                "link": "posts/introduction-to-bitcoin.html",
+                "date": "2021-09-01T00:00:00.000Z",
                 "updated": null,
                 "author": "veryyoung",
                 "contributors": [
@@ -43,7 +43,8 @@ export default {
                     "crypto",
                     "blockchain"
                 ],
-                "excerpt": "代码质量有很多指标： 1. 源代码行数 2. 代码重复率 3. 圈复杂度 4. 报错量（ Bug 数）占比 5. 测试覆盖率 6. 开发约束（代码块行数等） 我做了一个脚本可以测出上面的 1, 2, 3 大家都来试一试吧！ Supported Languages - js, ..."
+                "excerpt": "初识比特币 大约 13-14 年左右就听说过比特币，当时并没有特别的印象，只是把它当成用电脑挖矿开采的“Q 币”，还用当时的破电脑跑过挖矿程序，有没有运行起来并加入网络，有没有挖到过比特币已是毫无印象。 2015 年大学毕业后...",
+                "cover": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Hash_Tree.svg/2560px-Hash_Tree.svg.png"
             }
         ],
         "categories": [],
