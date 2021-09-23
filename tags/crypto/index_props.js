@@ -15,11 +15,28 @@ export default {
         "isPost": false,
         "posts": [
             {
-                "pagePath": "posts/introduction-to-bitcoin.md",
-                "title": "比特币简介",
-                "link": "posts/introduction-to-bitcoin.html",
-                "date": "2021-09-01T00:00:00.000Z",
+                "pagePath": "posts/intro-to-ethereum.md",
+                "title": "以太坊简介",
+                "link": "posts/intro-to-ethereum.html",
+                "date": "2021-09-22T00:00:00.000Z",
                 "updated": null,
+                "author": "veryyoung",
+                "contributors": [
+                    "veryyoung"
+                ],
+                "tags": [
+                    "crypto",
+                    "blockchain"
+                ],
+                "excerpt": "以太坊简介 2013 年底，19 岁的 Vitalik Buterin(以下简称 V 神) 发布了以太坊白皮书，以太坊就此诞生。 白皮书的副标题是 \"A Next-Generation Smart Contract and Decentralized Application Platform\"(下一代智能合约智能合约...",
+                "cover": "https://ethereum.org/static/2c0e5e27e397f4ac6b88082fd28d072f/00e09/ether-state-transition.png"
+            },
+            {
+                "pagePath": "posts/intro-to-bitcoin.md",
+                "title": "比特币简介",
+                "link": "posts/intro-to-bitcoin.html",
+                "date": "2021-09-01T00:00:00.000Z",
+                "updated": "2021-09-23T11:04:41.000Z",
                 "author": "veryyoung",
                 "contributors": [
                     "veryyoung"
@@ -36,11 +53,11 @@ export default {
         "tags": [
             {
                 "name": "blockchain",
-                "count": 1
+                "count": 2
             },
             {
                 "name": "crypto",
-                "count": 1
+                "count": 2
             }
         ]
     }
