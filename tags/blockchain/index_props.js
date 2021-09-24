@@ -19,7 +19,7 @@ export default {
                 "title": "以太坊简介",
                 "link": "posts/intro-to-ethereum.html",
                 "date": "2021-09-22T00:00:00.000Z",
-                "updated": null,
+                "updated": "2021-09-24T02:23:43.000Z",
                 "author": "veryyoung",
                 "contributors": [
                     "veryyoung"
