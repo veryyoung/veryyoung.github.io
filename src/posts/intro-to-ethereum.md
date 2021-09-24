@@ -214,7 +214,7 @@ DAO 由编写好的智能合约来执行组织的决策，或由代币持有者(
 
 基于以太坊网络可以实现去中心化金融，无需依赖交易所、银行、券商等传统金融机构以及他们提供的工具。DeFi 依赖智能合约进行金融活动，可以完成借款、存款生息、交易所、保险、机枪池、金融衍生品等金融业务。
 
-#### [Dex](https://www.chaindd.com/3458457.html)(去中心化交易所)
+### [Dex](https://www.chaindd.com/3458457.html)(去中心化交易所)
 
 Dex 全称 DecentralizedExchange，是采用智能合约构建出的交易所。于传统中心化交易所相比有如下特点
 
@@ -222,11 +222,11 @@ Dex 全称 DecentralizedExchange，是采用智能合约构建出的交易所。
 - 上币门槛低：任何人都能在 Dex 上提供流动性，币种有流动性等于上币成功
 - 无需 KYC：Dex 无需注册、KYC 等一系列泄露隐私的操作，仅需要一个钱包
 
-#### Play To Earn
+### Play To Earn
 
 区块链的世界里玩游戏可以赚钱，龙头链游 [Axie Infinity](https://axieinfinity.com/) 曾经好几个季度营收超过传统游戏龙头《王者荣耀》，用户在享受游戏带来的乐趣的同时还能得到代币奖励。
 
-#### [Metaverse](https://baike.baidu.com/item/Metaverse/3594112)(元宇宙)
+### [Metaverse](https://baike.baidu.com/item/Metaverse/3594112)(元宇宙)
 
 元宇宙是沉浸式的虚拟空间，用户可在其中进行文化、社 交、娱乐活动，元宇宙的核心在于对虚拟资产和虚拟身份的承载。话题太大，还远远没有成熟，这里不展开介绍。
 
