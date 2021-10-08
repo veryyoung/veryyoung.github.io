@@ -58,6 +58,10 @@ export default {
             {
                 "name": "crypto",
                 "count": 2
+            },
+            {
+                "name": "tips",
+                "count": 1
             }
         ]
     }
