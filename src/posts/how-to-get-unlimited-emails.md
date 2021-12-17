@@ -36,7 +36,7 @@ Gmail 地址末尾可以加「+」和任何内容，都会发送到原始 Gmail 
 
 ### ZOHO
 
-(ZOHO)[https://www.zoho.com/] 是一个免费的域名邮箱，在域名商或第三方 DNS 设置好之后即可拥有企业邮箱，请注意，不要进 ZOHO 中国版，中国版需要太多个人信息，繁琐且不安全。
+[ZOHO](https://www.zoho.com/)是一个免费的域名邮箱，在域名商或第三方 DNS 设置好之后即可拥有企业邮箱，请注意，不要进 ZOHO 中国版，中国版需要太多个人信息，繁琐且不安全。
 
 操作流程参考 [Authenticating an email domain
 ](https://help.zoho.com/portal/en/kb/backstage/user-guide/setting-up-a-portal/authenticating-your-email-domain/articles/authenticating-your-email-domain#Delete_email_domain)，设置好域名邮箱后设置「全收邮箱」，任何该域名下不存在的邮箱收件都会转发到该「全收邮箱」。
