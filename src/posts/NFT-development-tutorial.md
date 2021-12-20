@@ -1,5 +1,5 @@
 ---
-title: NFT 从开发到上架全流程
+title: NFT 从开发到上架 Opensea 全流程
 date: 2021-11-30
 author: veryyoung
 tags:
@@ -45,21 +45,42 @@ tags:
 
 名字编号做成自增，description 可以随意写， image 内容填 ipfs://+刚刚准备的文件 cid
 
-我准备了个脚本来自动生成所有盲盒 json 文件
-
+我准备了个脚本来自动生成所有盲盒 json 文件，代码见 [unreveal.js](https://github.com/veryyoung/nft-demo/blob/main/scripts/unreveal.js)
 
 执行后效果如下
 
-![not revealed metadata](../assets/images/not_revealed_metadata.png)
+![not revealed metadata](../assets/images/not_revealed_metadata.jpg)
 
 
-
-
+将 metadata 上传到 ipfs，得到 folder 的 cid：QmPphQMMEhwmXMp3m4sJrtL9xqAX8emiXBZw8UeVGhqZhK
 
 
 ## 4. 编写合约代码
 
-## 5. 生成开图后的图片和 meta info
+代码见 [VeryyoungNFTSimpleDemo.sol](https://github.com/veryyoung/nft-demo/blob/main/contracts/VeryyoungNFTSimpleDemo.sol)
+
+这里有几个需要注意的：
+
+1.  使用 openzeppelin 的 Counter 工具来当计数器，而不是自己维护计数器，避免混乱。已经见过好几个项目计数混乱了。
+2.  留了方法 setBaseURI 来修改 baseurl，用来开图。
+3.  拒绝合约调用，防止使用合约来批量调用（NFT初期很多项目被用合约批量 mint，某数字 DAO 因此一战成名）
+4.  withdraw 方法使用了 call 而不是直接使用 tranfer 函数
+5.  敏感方法加上了 onlyOwner 修饰符，仅允许合约拥有者(也就是部署合约的那个地址)进行操作，防止被恶意利用，具体原因参考 [Don't use transfer() or send()](https://consensys.github.io/smart-contract-best-practices/recommendations/#dont-use-transfer-or-send)
+
+## 6. 编写测试
+
+参考 [simple_demo.spec.js](https://github.com/veryyoung/nft-demo/blob/main/test/simple_demo.spec.js)
+
+## 7. 部署合约
+
+## 8. 上架 opensea
+
+
+## 9. 开图
+
+生成开图后的图片和 meta info
+
+
 
 
 
