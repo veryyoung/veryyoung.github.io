@@ -15,6 +15,24 @@ export default {
         "isPost": false,
         "posts": [
             {
+                "pagePath": "posts/NFT-development-tutorial.md",
+                "title": "NFT 从开发到上架 Opensea 全流程",
+                "link": "posts/NFT-development-tutorial.html",
+                "date": "2021-11-30T00:00:00.000Z",
+                "updated": "2021-12-20T18:54:37.000Z",
+                "author": "veryyoung",
+                "contributors": [
+                    "veryyoung"
+                ],
+                "tags": [
+                    "dev",
+                    "crypto",
+                    "blockchain"
+                ],
+                "excerpt": "最近参与了很多 NFT 项目的一级市场 mint 以及交易过程，也阅读了很多 NFT 项目的合约代码，自己还没实操过，此文章边做边写，不一定是最佳实践，但所有环节是本人亲自参与过的，keep your hands dirty, let's go. 此教程所有环...",
+                "cover": "../assets/images/not_revealed_metadata.jpg"
+            },
+            {
                 "pagePath": "posts/intro-to-ethereum.md",
                 "title": "以太坊简介",
                 "link": "posts/intro-to-ethereum.html",
@@ -36,7 +54,7 @@ export default {
                 "title": "比特币简介",
                 "link": "posts/intro-to-bitcoin.html",
                 "date": "2021-09-01T00:00:00.000Z",
-                "updated": "2021-09-23T11:04:41.000Z",
+                "updated": "2021-12-17T08:10:23.000Z",
                 "author": "veryyoung",
                 "contributors": [
                     "veryyoung"
@@ -53,11 +71,15 @@ export default {
         "tags": [
             {
                 "name": "blockchain",
-                "count": 2
+                "count": 3
             },
             {
                 "name": "crypto",
-                "count": 2
+                "count": 3
+            },
+            {
+                "name": "dev",
+                "count": 1
             },
             {
                 "name": "tips",

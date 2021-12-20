@@ -1,34 +1,36 @@
 import projectConfig from '/pagic.config.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'master' },
-    'pagePath': "tags/tips/",
+    'pagePath': "tags/dev/",
     'layoutPath': "archives/_layout.tsx",
-    'outputPath': "tags/tips/index.html",
+    'outputPath': "tags/dev/index.html",
     'head': null,
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "/index.js", type: "module" })),
-    'title': "tips",
+    'title': "dev",
     'content': null,
     'blog': {
         "isPost": false,
         "posts": [
             {
-                "pagePath": "posts/how-to-get-unlimited-emails.md",
-                "title": "如何得到无限邮箱号？",
-                "link": "posts/how-to-get-unlimited-emails.html",
-                "date": "2021-09-27T00:00:00.000Z",
-                "updated": "2021-12-17T08:10:23.000Z",
+                "pagePath": "posts/NFT-development-tutorial.md",
+                "title": "NFT 从开发到上架 Opensea 全流程",
+                "link": "posts/NFT-development-tutorial.html",
+                "date": "2021-11-30T00:00:00.000Z",
+                "updated": "2021-12-20T18:54:37.000Z",
                 "author": "veryyoung",
                 "contributors": [
                     "veryyoung"
                 ],
                 "tags": [
-                    "tips"
+                    "dev",
+                    "crypto",
+                    "blockchain"
                 ],
-                "excerpt": "国内的网站或平台基本是需要绑定手机号的，但国外的大部分验证邮箱即可，如果能拥有无限邮箱号，就有无限注册账号的可能，如果平台有类似新手活动或需要拉邀请.....剩下的自己体会 以下是我尝试过的几种方式。 Gmail 任意位置加...",
-                "cover": "../assets/images/email_all_receive.png"
+                "excerpt": "最近参与了很多 NFT 项目的一级市场 mint 以及交易过程，也阅读了很多 NFT 项目的合约代码，自己还没实操过，此文章边做边写，不一定是最佳实践，但所有环节是本人亲自参与过的，keep your hands dirty, let's go. 此教程所有环...",
+                "cover": "../assets/images/not_revealed_metadata.jpg"
             }
         ],
         "categories": [],
