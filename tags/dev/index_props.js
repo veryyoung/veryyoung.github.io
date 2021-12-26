@@ -19,7 +19,7 @@ export default {
                 "title": "NFT 从开发到上架 Opensea 全流程",
                 "link": "posts/NFT-development-tutorial.html",
                 "date": "2021-11-30T00:00:00.000Z",
-                "updated": "2021-12-20T18:54:37.000Z",
+                "updated": "2021-12-26T13:14:32.000Z",
                 "author": "veryyoung",
                 "contributors": [
                     "veryyoung"

@@ -60,7 +60,7 @@ export default {
                 "title": "NFT 从开发到上架 Opensea 全流程",
                 "link": "posts/NFT-development-tutorial.html",
                 "date": "2021-11-30T00:00:00.000Z",
-                "updated": "2021-12-20T18:54:37.000Z",
+                "updated": "2021-12-26T13:14:32.000Z",
                 "author": "veryyoung",
                 "contributors": [
                     "veryyoung"
@@ -94,7 +94,7 @@ export default {
                 "title": "以太坊简介",
                 "link": "posts/intro-to-ethereum.html",
                 "date": "2021-09-22T00:00:00.000Z",
-                "updated": "2021-09-24T02:23:43.000Z",
+                "updated": "2021-12-26T13:14:32.000Z",
                 "author": "veryyoung",
                 "contributors": [
                     "veryyoung"
@@ -104,7 +104,7 @@ export default {
                     "blockchain"
                 ],
                 "excerpt": "以太坊简介 2013 年底，19 岁的 Vitalik Buterin(以下简称 V 神) 发布了以太坊白皮书，以太坊就此诞生。 白皮书的副标题是 \"A Next-Generation Smart Contract and Decentralized Application Platform\"(下一代智能合约智能合约...",
-                "cover": "https://ethereum.org/static/2c0e5e27e397f4ac6b88082fd28d072f/00e09/ether-state-transition.png"
+                "cover": "https://sanfranciscotribe.com/Home/wp-content/uploads/2020/05/Ethereum-Ground-Up.png"
             },
             {
                 "pagePath": "posts/intro-to-bitcoin.md",
