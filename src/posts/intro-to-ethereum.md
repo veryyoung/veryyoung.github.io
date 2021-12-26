@@ -152,7 +152,7 @@ Gas 也可以避免网络被垃圾消息和交易攻击，因为执行操作是�
 
 以太坊网络是个全局统一状态的状态机，已打包的区块的账户、交易、合约等状态是全网统一且透明的。
 
-![Ethereum State Transition Function](https://ethereum.org/static/2c0e5e27e397f4ac6b88082fd28d072f/00e09/ether-state-transition.png)
+![Ethereum State Transition Function](https://sanfranciscotribe.com/Home/wp-content/uploads/2020/05/Ethereum-Ground-Up.png)
 
 以太坊的状态转移函数：  
 > APPLY(S,TX) -> S' 
