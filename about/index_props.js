@@ -6,7 +6,7 @@ export default {
     'outputPath': "about/index.html",
     'title': "About me",
     'content': React.createElement("article", { dangerouslySetInnerHTML: {
-            __html: '<h1>About me</h1>\n<p>互联网从业者，目前 focus 在区块链领域，在我看来区块链是最有可能引领 web3.0 的方向的技术，钻到这里领域里面去有种理想世界的感觉。</p>\n<p>我也是名 Bitcoin hodler， 比特币最大的意义在于，这是人类史上第一次，从技术层面上彻底、纯粹地保证了“私人财产不可侵犯”。</p>\n<p>Hold BTC, use the blockchain technology, enjoy life！</p>'
+            __html: '<h1>About me</h1>\n<p>Web3 Builder, Crypto Holder.</p>\n<p>All in Crypto，民间伪科学家。</p>\n<p>欢迎发信与我聊 Web3 和 Crypto 的事情，也可以找我寻求技术帮助(收费昂贵)。</p>'
         } }),
     'head': null,
     'script': React.createElement(React.Fragment, null,
@@ -15,7 +15,7 @@ export default {
         React.createElement("script", { src: "/index.js", type: "module" })),
     'contentTitle': React.createElement("h1", { key: "0" }, "About me"),
     'contentBody': React.createElement("article", { dangerouslySetInnerHTML: {
-            __html: '<p>互联网从业者，目前 focus 在区块链领域，在我看来区块链是最有可能引领 web3.0 的方向的技术，钻到这里领域里面去有种理想世界的感觉。</p>\n<p>我也是名 Bitcoin hodler， 比特币最大的意义在于，这是人类史上第一次，从技术层面上彻底、纯粹地保证了“私人财产不可侵犯”。</p>\n<p>Hold BTC, use the blockchain technology, enjoy life！</p>'
+            __html: '<p>Web3 Builder, Crypto Holder.</p>\n<p>All in Crypto，民间伪科学家。</p>\n<p>欢迎发信与我聊 Web3 和 Crypto 的事情，也可以找我寻求技术帮助(收费昂贵)。</p>'
         } }),
     'toc': null,
     'author': "veryyoung",
@@ -23,12 +23,31 @@ export default {
         "veryyoung"
     ],
     'date': "2021-08-30T12:42:10.000Z",
-    'updated': null,
-    'excerpt': "互联网从业者，目前 focus 在区块链领域，在我看来区块链是最有可能引领 web3.0 的方向的技术，钻到这里领域里面去有种理想世界的感觉。 我也是名 Bitcoin hodler， 比特币最大的意义在于，这是人类史上第一次，从技术层面上彻...",
+    'updated': "2022-01-06T18:21:08.000Z",
+    'excerpt': "Web3 Builder, Crypto Holder. All in Crypto，民间伪科学家。 欢迎发信与我聊 Web3 和 Crypto 的事情，也可以找我寻求技术帮助(收费昂贵)。",
     'cover': undefined,
     'blog': {
         "isPost": false,
         "posts": [
+            {
+                "pagePath": "posts/2021-in-review.md",
+                "title": "2021 In Review",
+                "link": "posts/2021-in-review.html",
+                "date": "2022-01-04T00:00:00.000Z",
+                "updated": "2022-01-06T18:21:08.000Z",
+                "author": "veryyoung",
+                "contributors": [
+                    "veryyoung"
+                ],
+                "tags": [
+                    "dev",
+                    "crypto",
+                    "blockchain",
+                    "life"
+                ],
+                "excerpt": "Connect the Dots 刚毕业那几年还会写 \"20xx 年总结\" 这样的文章，不知道在哪一年已经失去了这个习惯。 今年发生了太多事情，让我非常有写点东西的想法。 叫 \"总结\" 好像过于古板，叫 \"回顾\" 可能比较合理，毕竟作为技术人，Co...",
+                "cover": "../assets/images/sequoia_capital_all_in_crypto.jpg"
+            },
             {
                 "pagePath": "posts/NFT-presale-and-public-dev-tutorial.md",
                 "title": "NFT 预售和公售开发教程",
@@ -119,15 +138,19 @@ export default {
         "tags": [
             {
                 "name": "blockchain",
-                "count": 4
+                "count": 5
             },
             {
                 "name": "crypto",
-                "count": 4
+                "count": 5
             },
             {
                 "name": "dev",
-                "count": 2
+                "count": 3
+            },
+            {
+                "name": "life",
+                "count": 1
             },
             {
                 "name": "tips",

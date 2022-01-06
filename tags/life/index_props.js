@@ -1,34 +1,37 @@
 import projectConfig from '/pagic.config.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'master' },
-    'pagePath': "tags/tips/",
+    'pagePath': "tags/life/",
     'layoutPath': "archives/_layout.tsx",
-    'outputPath': "tags/tips/index.html",
+    'outputPath': "tags/life/index.html",
     'head': null,
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "/index.js", type: "module" })),
-    'title': "tips",
+    'title': "life",
     'content': null,
     'blog': {
         "isPost": false,
         "posts": [
             {
-                "pagePath": "posts/how-to-get-unlimited-emails.md",
-                "title": "如何得到无限邮箱号？",
-                "link": "posts/how-to-get-unlimited-emails.html",
-                "date": "2021-09-27T00:00:00.000Z",
-                "updated": "2021-12-17T08:10:23.000Z",
+                "pagePath": "posts/2021-in-review.md",
+                "title": "2021 In Review",
+                "link": "posts/2021-in-review.html",
+                "date": "2022-01-04T00:00:00.000Z",
+                "updated": "2022-01-06T18:21:08.000Z",
                 "author": "veryyoung",
                 "contributors": [
                     "veryyoung"
                 ],
                 "tags": [
-                    "tips"
+                    "dev",
+                    "crypto",
+                    "blockchain",
+                    "life"
                 ],
-                "excerpt": "国内的网站或平台基本是需要绑定手机号的，但国外的大部分验证邮箱即可，如果能拥有无限邮箱号，就有无限注册账号的可能，如果平台有类似新手活动或需要拉邀请.....剩下的自己体会 以下是我尝试过的几种方式。 Gmail 任意位置加...",
-                "cover": "../assets/images/email_all_receive.png"
+                "excerpt": "Connect the Dots 刚毕业那几年还会写 \"20xx 年总结\" 这样的文章，不知道在哪一年已经失去了这个习惯。 今年发生了太多事情，让我非常有写点东西的想法。 叫 \"总结\" 好像过于古板，叫 \"回顾\" 可能比较合理，毕竟作为技术人，Co...",
+                "cover": "../assets/images/sequoia_capital_all_in_crypto.jpg"
             }
         ],
         "categories": [],
