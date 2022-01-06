@@ -70,7 +70,7 @@ export default {
                 "title": "2021 In Review",
                 "link": "posts/2021-in-review.html",
                 "date": "2022-01-04T00:00:00.000Z",
-                "updated": "2022-01-06T18:21:08.000Z",
+                "updated": "2022-01-06T18:45:38.000Z",
                 "author": "veryyoung",
                 "contributors": [
                     "veryyoung"
