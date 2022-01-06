@@ -3,7 +3,7 @@ export default {
   theme: 'blog',
   plugins: ['blog'],
   title: "veryyoung's blog",
-  description: '技术研发，投资和生活方面的自言自语，并不一定能形成体系，并不一定能给你带来帮助，但希望你能 enjoy it.',
+  description: 'Web3 Builder&Crypto Holder',
   github: 'https://github.com/veryyoung',
   nav: [
     {
