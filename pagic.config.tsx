@@ -43,7 +43,7 @@ export default {
     social: {
       github: 'veryyoung',
       email: 'veryyoung.me@gmail.com',
-      twitter: 'veryoungforever',
+      twitter: '0xveryyoung',
     }
   }
 };
