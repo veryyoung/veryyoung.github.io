@@ -35,18 +35,22 @@ export default {
         "tags": [
             {
                 "name": "blockchain",
-                "count": 5
+                "count": 6
             },
             {
                 "name": "crypto",
-                "count": 5
+                "count": 6
             },
             {
                 "name": "dev",
-                "count": 3
+                "count": 2
             },
             {
                 "name": "life",
+                "count": 1
+            },
+            {
+                "name": "privacy",
                 "count": 1
             },
             {

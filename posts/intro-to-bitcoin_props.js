@@ -70,17 +70,33 @@ export default {
         "isPost": true,
         "posts": [
             {
-                "pagePath": "posts/2021-in-review.md",
-                "title": "2021 In Review",
-                "link": "posts/2021-in-review.html",
-                "date": "2022-01-04T00:00:00.000Z",
-                "updated": "2022-01-06T18:45:38.000Z",
+                "pagePath": "posts/suterusu-research-report.md",
+                "title": "Suterusu 研究报告",
+                "link": "posts/suterusu-research-report.html",
+                "date": "2022-01-15T00:00:00.000Z",
+                "updated": null,
                 "author": "veryyoung",
                 "contributors": [
                     "veryyoung"
                 ],
                 "tags": [
-                    "dev",
+                    "crypto",
+                    "blockchain",
+                    "privacy"
+                ],
+                "excerpt": "前言 Suterusu 是一位币圈 OG 朋友推荐给我的。 他来自传统金融领域，但在工作没多久就辞职 All in crypto，有大量的大饼在手，是曾经两个 punk 的持有者，各种新玩法他也能跟得上，并且有很独到的见解。 Suterusu 是他重仓的一..."
+            },
+            {
+                "pagePath": "posts/2021-in-review.md",
+                "title": "2021 In Review",
+                "link": "posts/2021-in-review.html",
+                "date": "2022-01-04T00:00:00.000Z",
+                "updated": "2022-01-14T19:37:11.000Z",
+                "author": "veryyoung",
+                "contributors": [
+                    "veryyoung"
+                ],
+                "tags": [
                     "crypto",
                     "blockchain",
                     "life"
@@ -178,18 +194,22 @@ export default {
         "tags": [
             {
                 "name": "blockchain",
-                "count": 5
+                "count": 6
             },
             {
                 "name": "crypto",
-                "count": 5
+                "count": 6
             },
             {
                 "name": "dev",
-                "count": 3
+                "count": 2
             },
             {
                 "name": "life",
+                "count": 1
+            },
+            {
+                "name": "privacy",
                 "count": 1
             },
             {
