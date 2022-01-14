@@ -3,7 +3,6 @@ title: 2021 In Review
 date: 2022-01-04
 author: veryyoung
 tags:
-  - dev
   - crypto
   - blockchain
   - life
