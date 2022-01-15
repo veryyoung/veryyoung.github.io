@@ -54,7 +54,7 @@ export default {
                 "title": "Suterusu 研究报告",
                 "link": "posts/suterusu-research-report.html",
                 "date": "2022-01-15T00:00:00.000Z",
-                "updated": null,
+                "updated": "2022-01-15T03:20:41.000Z",
                 "author": "veryyoung",
                 "contributors": [
                     "veryyoung"
