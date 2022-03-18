@@ -67,6 +67,7 @@ tags:
 3.  拒绝合约调用，防止使用合约来批量调用（NFT初期很多项目被用合约批量 mint，某数字 DAO 因此一战成名）
 4.  withdraw 方法使用了 call 而不是直接使用 tranfer 函数，防止被恶意利用，具体原因参考 [Don't use transfer() or send()](https://consensys.github.io/smart-contract-best-practices/recommendations/#dont-use-transfer-or-send)
 5.  敏感方法加上了 onlyOwner 修饰符，仅允许合约拥有者(也就是部署合约的那个地址)进行操作
+6.  使用 [ERC721A](https://github.com/chiru-labs/ERC721A) 降低 mint 多个的 gas
 
 ## 6. 编写测试
 
@@ -200,7 +201,7 @@ CID：QmdNhbTrDmDvzQwefiCCUJZ3JGRNvk2nbkAqYLJEtXqChB
 
 ## 12.  白名单维护，预售和公售
 
-[下一篇](../NFT-presale-and-public-dev-tutorial)会详细写
+[下一篇](../posts/NFT-presale-and-public-dev-tutorial.html)会详细写
 
 
 
