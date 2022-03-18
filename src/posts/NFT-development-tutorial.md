@@ -62,12 +62,11 @@ tags:
 
 这里有几个需要注意的：
 
-1.  使用 openzeppelin 的 Counter 工具来当计数器，而不是自己维护计数器，避免混乱。已经见过好几个项目计数混乱了。
-2.  留了方法 setBaseURI 来修改 baseurl，用来开图。
-3.  拒绝合约调用，防止使用合约来批量调用（NFT初期很多项目被用合约批量 mint，某数字 DAO 因此一战成名）
-4.  withdraw 方法使用了 call 而不是直接使用 tranfer 函数，防止被恶意利用，具体原因参考 [Don't use transfer() or send()](https://consensys.github.io/smart-contract-best-practices/recommendations/#dont-use-transfer-or-send)
-5.  敏感方法加上了 onlyOwner 修饰符，仅允许合约拥有者(也就是部署合约的那个地址)进行操作
-6.  使用 [ERC721A](https://github.com/chiru-labs/ERC721A) 降低 mint 多个的 gas
+1.  留了方法 setBaseURI 来修改 baseurl，用来开图。
+2.  拒绝合约调用，防止使用合约来批量调用（NFT初期很多项目被用合约批量 mint，某数字 DAO 因此一战成名）
+3.  withdraw 方法使用了 call 而不是直接使用 tranfer 函数，防止被恶意利用，具体原因参考 [Don't use transfer() or send()](https://consensys.github.io/smart-contract-best-practices/recommendations/#dont-use-transfer-or-send)
+4.  敏感方法加上了 onlyOwner 修饰符，仅允许合约拥有者(也就是部署合约的那个地址)进行操作
+5.  使用 [ERC721A](https://github.com/chiru-labs/ERC721A) 降低 mint 多个的 gas
 
 ## 6. 编写测试
 
