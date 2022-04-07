@@ -37,11 +37,11 @@
 <p>代码见 <a href="https://github.com/veryyoung/nft-demo/blob/main/contracts/VeryyoungNFTSimpleDemo.sol">VeryyoungNFTSimpleDemo.sol</a></p>
 <p>这里有几个需要注意的：</p>
 <ol>
-<li>使用 openzeppelin 的 Counter 工具来当计数器，而不是自己维护计数器，避免混乱。已经见过好几个项目计数混乱了。</li>
 <li>留了方法 setBaseURI 来修改 baseurl，用来开图。</li>
 <li>拒绝合约调用，防止使用合约来批量调用（NFT初期很多项目被用合约批量 mint，某数字 DAO 因此一战成名）</li>
 <li>withdraw 方法使用了 call 而不是直接使用 tranfer 函数，防止被恶意利用，具体原因参考 <a href="https://consensys.github.io/smart-contract-best-practices/recommendations/#dont-use-transfer-or-send">Don't use transfer() or send()</a></li>
 <li>敏感方法加上了 onlyOwner 修饰符，仅允许合约拥有者(也就是部署合约的那个地址)进行操作</li>
+<li>使用 <a href="https://github.com/chiru-labs/ERC721A">ERC721A</a> 降低 mint 多个的 gas</li>
 </ol>
 <h2 id="6-%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95">6. 编写测试<a class="anchor" href="#6-%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95">§</a></h2>
 <p>参考 <a href="https://github.com/veryyoung/nft-demo/blob/main/test/simple_demo.spec.js">simple_demo.spec.js</a></p>
@@ -114,4 +114,4 @@ Successfully verified contract VeryyoungNFTSimpleDemo on Etherscan.
 <p>由于 opensea 有缓存机制，一定时间后才会刷新到 opensea。</p>
 <p>也可在 opensea 上的 item 里面点击 &quot;Refresh Metadata&quot; 触发刷新。</p>
 <h2 id="12--%E7%99%BD%E5%90%8D%E5%8D%95%E7%BB%B4%E6%8A%A4%E9%A2%84%E5%94%AE%E5%92%8C%E5%85%AC%E5%94%AE">12.  白名单维护，预售和公售<a class="anchor" href="#12--%E7%99%BD%E5%90%8D%E5%8D%95%E7%BB%B4%E6%8A%A4%E9%A2%84%E5%94%AE%E5%92%8C%E5%85%AC%E5%94%AE">§</a></h2>
-<p><a href="../NFT-presale-and-public-dev-tutorial">下一篇</a>会详细写</p></article></section><footer>Powered by <a href="https://github.com/xcatliu/pagic" target="_blank">Pagic</a></footer><script src="https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js"></script><script src="https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js"></script><script type="module" src="/index.js"></script></body></html>
+<p><a href="../posts/NFT-presale-and-public-dev-tutorial.html">下一篇</a>会详细写</p></article></section><footer>Powered by <a href="https://github.com/xcatliu/pagic" target="_blank">Pagic</a></footer><script src="https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js"></script><script src="https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js"></script><script type="module" src="/index.js"></script></body></html>

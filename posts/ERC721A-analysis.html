@@ -1,0 +1,142 @@
+<!doctype html><html class="" data-reactroot=""><head>
+<meta data-react-helmet="true" charset="utf-8"/><meta data-react-helmet="true" http-equiv="x-ua-compatible" content="ie=edge"/><meta data-react-helmet="true" name="description" content="Web3 Builder&amp;Crypto Holder"/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1"/>
+<title data-react-helmet="true">ERC721A 介绍及原理分析 · veryyoung&#x27;s blog</title>
+<link data-react-helmet="true" rel="stylesheet" href="/assets/index.css"/><link data-react-helmet="true" id="prismTheme" rel="stylesheet" href="/assets/prism.css"/>
+<script data-react-helmet="true" >
+    const shouldSetIsDark = document.cookie.includes('is_dark=1') ? true : document.cookie.includes('is_dark=0') ? false : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (shouldSetIsDark) {
+      document.documentElement.classList.add('is_dark');
+      document.getElementById('prismTheme').href = "/assets/prism_tomorrow.css";
+    }
+  </script>
+</head><body><a class="czs-menu-l show_on_mobile aside_button_open" href="#" style="background-image:url(&quot;/assets/czs-menu-l.svg&quot;)"></a><a class="show_on_mobile aside_button_text" href="/">veryyoung&#x27;s blog</a><aside class="hide_on_mobile"><div class="aside_card"><a class="czs-menu-l show_on_mobile aside_button_close" href="#" style="background-image:url(&quot;/assets/czs-close-l.svg&quot;)"></a><h1><a href="/">veryyoung&#x27;s blog</a></h1><p class="description">Web3 Builder&amp;Crypto Holder</p><ul class="social list_style_none"><li class="flex_center"><a class="czs-github-logo" href="https://github.com/veryyoung" target="_blank" style="background-image:url(&quot;/assets/czs-github-logo.svg&quot;)"></a></li><li class="flex_center"><a class="czs-message-l" href="mailto:veryyoung.me@gmail.com" target="_blank" style="background-image:url(&quot;/assets/czs-message-l.svg&quot;)"></a></li><li class="flex_center"><a class="czs-twitter" href="https://twitter.com/0xveryyoung" target="_blank" style="background-image:url(&quot;/assets/czs-twitter.svg&quot;)"></a></li><li style="flex-grow:1"></li><li class="toggle_dark flex_center"><span class="czs-sun" style="background-image:url(&quot;/assets/czs-sun.svg&quot;)"></span><span class="czs-sun-l" style="background-image:url(&quot;/assets/czs-sun-l.svg&quot;)"></span><span class="czs-moon" style="background-image:url(&quot;/assets/czs-moon.svg&quot;)"></span><span class="czs-moon-l" style="background-image:url(&quot;/assets/czs-moon-l.svg&quot;)"></span></li></ul><nav><ul class="menu list_style_none"><li><a class="flex_center" href="/"><span class="czs-home-l" style="background-image:url(&quot;/assets/czs-home-l.svg&quot;)"></span>Home</a></li><li><a class="flex_center" href="/tags/"><span class="czs-tag-l" style="background-image:url(&quot;/assets/czs-tag-l.svg&quot;)"></span>Tags</a></li><li><a class="flex_center" href="/about/"><span class="czs-about-l" style="background-image:url(&quot;/assets/czs-about-l.svg&quot;)"></span>About</a></li></ul></nav></div><nav class="toc"><ol><li><a href="#%E4%BB%8B%E7%BB%8D">介绍</a></li><li><a href="#erc721a-%E4%BD%BF%E7%94%A8">ERC721A 使用</a></li><li><a href="#erc721a-gas-%E6%B5%8B%E9%87%8F">ERC721A gas 测量</a></li><li><a href="#erc721a-%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90">ERC721A 原理分析</a></li><li><a href="#erc721a-%E7%BC%BA%E7%82%B9">ERC721A 缺点</a></li><li><a href="#erc721a-%E6%84%8F%E4%B9%89">ERC721A 意义</a></li></ol></nav></aside><section class="main"><h1>ERC721A 介绍及原理分析</h1><div class="main_post_meta"><time dateTime="Thu Apr 07 2022 00:00:00 GMT+0000 (UTC)">2022-04-07</time> · <!-- -->veryyoung</div><article><h2 id="%E4%BB%8B%E7%BB%8D">介绍<a class="anchor" href="#%E4%BB%8B%E7%BB%8D">§</a></h2>
+<p><a href="https://www.erc721a.org/">ERC721A</a> 是 <a href="https://opensea.io/collection/azuki">Azuki</a> 项目方研发的一个 ERC721 协议的实现，能在 mint 多个 NFT 的时候节省大量的 gas，甚至能做到 gas 成本基本与铸造单个 NFT 基本相同。</p>
+<h2 id="erc721a-%E4%BD%BF%E7%94%A8">ERC721A 使用<a class="anchor" href="#erc721a-%E4%BD%BF%E7%94%A8">§</a></h2>
+<ol>
+<li>引入 ERC721A 依赖</li>
+</ol>
+<pre class="language-shell"><code class="language-shell"><span class="token function">npm</span> <span class="token function">install</span> --save-dev erc721a
+</code></pre>
+<ol start="2">
+<li>合约导入 ERC721A 依赖</li>
+</ol>
+<pre class="language-js"><code class="language-js"><span class="token keyword module">import</span> <span class="token string">"erc721a/contracts/ERC721A.sol"</span><span class="token punctuation">;</span>
+</code></pre>
+<ol start="3">
+<li>修改循环调用 _safeMint 为按 quantity mint</li>
+</ol>
+<p>完整代码如下</p>
+<pre class="language-js"><code class="language-js">pragma solidity <span class="token operator">^</span><span class="token number">0.8</span><span class="token number">.4</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">import</span> <span class="token string">"erc721a/contracts/ERC721A.sol"</span><span class="token punctuation">;</span>
+
+contract <span class="token maybe-class-name">Azuki</span> is <span class="token constant">ERC721A</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token constant">ERC721A</span><span class="token punctuation">(</span><span class="token string">"Azuki"</span><span class="token punctuation">,</span> <span class="token string">"AZUKI"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+  <span class="token keyword">function</span> <span class="token function">mint</span><span class="token punctuation">(</span><span class="token parameter">uint256 quantity</span><span class="token punctuation">)</span> external payable <span class="token punctuation">{</span>
+    <span class="token comment">// _safeMint's second argument now takes in a quantity, not a tokenId.</span>
+    <span class="token function">_safeMint</span><span class="token punctuation">(</span>msg<span class="token punctuation">.</span><span class="token property-access">sender</span><span class="token punctuation">,</span> quantity<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="erc721a-gas-%E6%B5%8B%E9%87%8F">ERC721A gas 测量<a class="anchor" href="#erc721a-gas-%E6%B5%8B%E9%87%8F">§</a></h2>
+<p>这是官方的测量结果</p>
+<p><img src="https://camo.githubusercontent.com/d13739d5ecfd5dc882b0cb7089a770b55f4bb1a1abf98067b94e1c21864fb261/68747470733a2f2f7062732e7477696d672e636f6d2f6d656469612f464964494c4b7056514145515f35553f666f726d61743d6a7067266e616d653d6d656469756d" alt="MEASUREMENTS"></p>
+<p>可以看出使用 ERC721A 实现相比较于 <a href="https://docs.openzeppelin.com/contracts/4.x/erc721">openzeppelin</a> 的实现，mint 一只 NFT 能节省大约 50% gas，mint 越多越省，mint 五只节省的 gas 高达 7 倍，接近于 mint 一只的成本。</p>
+<h2 id="erc721a-%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90">ERC721A 原理分析<a class="anchor" href="#erc721a-%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90">§</a></h2>
+<ol>
+<li>去掉了没必要的存储</li>
+</ol>
+<p>openzeppelin 的实现用 _allTokens 这个数组存储了所有的 token 情况，而 ERC721A 实现放弃了这个存储，设定 token index 从 0 开始自增。</p>
+<p>openzeppelin 的 totalSupply 方法需要从 _allTokens 查</p>
+<pre class="language-js"><code class="language-js"><span class="token doc-comment comment">/**
+ * <span class="token keyword">@dev</span> See <span class="token punctuation">{</span>IERC721Enumerable-totalSupply<span class="token punctuation">}</span>.
+ */</span>
+<span class="token keyword">function</span> <span class="token function">totalSupply</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">public</span> view virtual override <span class="token function">returns</span> <span class="token punctuation">(</span><span class="token parameter">uint256</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">return</span> _allTokens<span class="token punctuation">.</span><span class="token property-access">length</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>而 ERC721A 实现可以根据 index 算出来</p>
+<pre class="language-js"><code class="language-js"><span class="token doc-comment comment">/**
+ * <span class="token keyword">@dev</span> Burned tokens are calculated here, use _totalMinted() if you want to count just minted tokens.
+ */</span>
+<span class="token keyword">function</span> <span class="token function">totalSupply</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">public</span> view <span class="token function">returns</span> <span class="token punctuation">(</span><span class="token parameter">uint256</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Counter underflow is impossible as _burnCounter cannot be incremented</span>
+    <span class="token comment">// more than _currentIndex - _startTokenId() times</span>
+    unchecked <span class="token punctuation">{</span>
+        <span class="token keyword control-flow">return</span> _currentIndex <span class="token operator">-</span> _burnCounter <span class="token operator">-</span> <span class="token function">_startTokenId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token doc-comment comment">/**
+ * Returns the total amount of tokens minted in the contract.
+ */</span>
+<span class="token keyword">function</span> <span class="token function">_totalMinted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> internal view <span class="token function">returns</span> <span class="token punctuation">(</span><span class="token parameter">uint256</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Counter underflow is impossible as _currentIndex does not decrement,</span>
+    <span class="token comment">// and it is initialized to _startTokenId()</span>
+    unchecked <span class="token punctuation">{</span>
+        <span class="token keyword control-flow">return</span> _currentIndex <span class="token operator">-</span> <span class="token function">_startTokenId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ol start="2">
+<li>只在批量 mint 后更新 owner 的余额，而不是每只 mint 后更新</li>
+</ol>
+<pre class="language-js"><code class="language-js">_addressData<span class="token punctuation">[</span>to<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token property-access">balance</span> <span class="token operator">+=</span> <span class="token function">uint64</span><span class="token punctuation">(</span>quantity<span class="token punctuation">)</span><span class="token punctuation">;</span>
+_addressData<span class="token punctuation">[</span>to<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token property-access">numberMinted</span> <span class="token operator">+=</span> <span class="token function">uint64</span><span class="token punctuation">(</span>quantity<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<ol start="3">
+<li>按批写入 NFT 的 owner，而不是每只 mint 后都更新</li>
+</ol>
+<pre class="language-js"><code class="language-js">_ownerships<span class="token punctuation">[</span>startTokenId<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token property-access">addr</span> <span class="token operator">=</span> to<span class="token punctuation">;</span>
+_ownerships<span class="token punctuation">[</span>startTokenId<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token property-access">startTimestamp</span> <span class="token operator">=</span> <span class="token function">uint64</span><span class="token punctuation">(</span>block<span class="token punctuation">.</span><span class="token property-access">timestamp</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>这样在 mint 时候确实能节省大量存储 token 所属人的成本，但是查询 token 所属人的时候也要做相应的更改</p>
+<pre class="language-js"><code class="language-js">
+<span class="token doc-comment comment">/**
+ * Gas spent here starts off proportional to the maximum mint batch size.
+ * It gradually moves to O(1) as tokens get transferred around in the collection over time.
+ */</span>
+<span class="token keyword">function</span> <span class="token function">_ownershipOf</span><span class="token punctuation">(</span><span class="token parameter">uint256 tokenId</span><span class="token punctuation">)</span> internal view <span class="token function">returns</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token maybe-class-name">TokenOwnership</span> memory</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    uint256 curr <span class="token operator">=</span> tokenId<span class="token punctuation">;</span>
+
+    unchecked <span class="token punctuation">{</span>
+        <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span><span class="token function">_startTokenId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;=</span> curr <span class="token operator">&amp;&amp;</span> curr <span class="token operator">&lt;</span> _currentIndex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token maybe-class-name">TokenOwnership</span> memory ownership <span class="token operator">=</span> _ownerships<span class="token punctuation">[</span>curr<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>ownership<span class="token punctuation">.</span><span class="token property-access">burned</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>ownership<span class="token punctuation">.</span><span class="token property-access">addr</span> <span class="token operator">!=</span> <span class="token function">address</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword control-flow">return</span> ownership<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                <span class="token comment">// Invariant:</span>
+                <span class="token comment">// There will always be an ownership that has an address and is not burned</span>
+                <span class="token comment">// before an ownership that does not have an address and is not burned.</span>
+                <span class="token comment">// Hence, curr will not underflow.</span>
+                <span class="token keyword control-flow">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    curr<span class="token operator">--</span><span class="token punctuation">;</span>
+                    ownership <span class="token operator">=</span> _ownerships<span class="token punctuation">[</span>curr<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                    <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>ownership<span class="token punctuation">.</span><span class="token property-access">addr</span> <span class="token operator">!=</span> <span class="token function">address</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        <span class="token keyword control-flow">return</span> ownership<span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    revert <span class="token function"><span class="token maybe-class-name">OwnerQueryForNonexistentToken</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>如果 ownership 找不到，递归往前寻找到第一个有效地址为止，而之前只需要从 _ownedTokens 这个 mapping 中获取。</p>
+<p>这会导致查询 token owner 的 gas 成本增加。</p>
+<p>所以在 NFT 转账和销毁场景消耗的 gas 是更多的，这点 ERC721A 在介绍和文档里并没有提到。</p>
+<h2 id="erc721a-%E7%BC%BA%E7%82%B9">ERC721A 缺点<a class="anchor" href="#erc721a-%E7%BC%BA%E7%82%B9">§</a></h2>
+<ol>
+<li>转账和销毁 gas 提升</li>
+</ol>
+<p>正如上所说，转账和销毁 gas 会增加，大约会增加 40%，但由于转账的 gas 并不高，这缺点可以忍受。</p>
+<ol start="2">
+<li>无法自定义 tokenId</li>
+</ol>
+<p>ERC721A 的 tokenId 只能是从 0 开始自增。在大部分 NFT 的 tokenId 都是从 0 自增的情况下，这个缺点也不是那么关键。</p>
+<h2 id="erc721a-%E6%84%8F%E4%B9%89">ERC721A 意义<a class="anchor" href="#erc721a-%E6%84%8F%E4%B9%89">§</a></h2>
+<p>ERC721A 可以大大降低 mint NFT 的成本，这对 NFT 一级市场参与者，对 NFT 项目方，都是很大的利好。</p>
+<p>参与者在 mint NFT 的成本降低会降低参与者参与 NFT 的风险，也会促进 NFT 项目更快的将 NFT 卖完。</p>
+<p>对 NFT 整个行业都有着促进作用，而市场似乎也很认可这点，截止到当前 Azuki 的地板价已到达 26 ETH，除了 Azuki 精美的艺术、良好的社区氛围和团队运营，恐怕技术也有一定的作用。</p></article></section><footer>Powered by <a href="https://github.com/xcatliu/pagic" target="_blank">Pagic</a></footer><script src="https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js"></script><script src="https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js"></script><script type="module" src="/index.js"></script></body></html>

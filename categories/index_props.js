@@ -30,6 +30,41 @@ export default {
         "isPost": false,
         "posts": [
             {
+                "pagePath": "posts/ERC721A-analysis.md",
+                "title": "ERC721A 介绍及原理分析",
+                "link": "posts/ERC721A-analysis.html",
+                "date": "2022-04-07T00:00:00.000Z",
+                "updated": null,
+                "author": "veryyoung",
+                "contributors": [
+                    "veryyoung"
+                ],
+                "tags": [
+                    "crypto",
+                    "blockchain",
+                    "NFT"
+                ],
+                "excerpt": "介绍 ERC721A 是 Azuki 项目方研发的一个 ERC721 协议的实现，能在 mint 多个 NFT 的时候节省大量的 gas，甚至能做到 gas 成本基本与铸造单个 NFT 基本相同。 ERC721A 使用 1. 引入 ERC721A 依赖 npm install --save-dev erc72...",
+                "cover": "https://camo.githubusercontent.com/d13739d5ecfd5dc882b0cb7089a770b55f4bb1a1abf98067b94e1c21864fb261/68747470733a2f2f7062732e7477696d672e636f6d2f6d656469612f464964494c4b7056514145515f35553f666f726d61743d6a7067266e616d653d6d656469756d"
+            },
+            {
+                "pagePath": "posts/summary-of-youtuber-nft-alpha.md",
+                "title": "YouTuber NFT阿尔法视频小结",
+                "link": "posts/summary-of-youtuber-nft-alpha.html",
+                "date": "2022-03-18T00:00:00.000Z",
+                "updated": null,
+                "author": "veryyoung",
+                "contributors": [
+                    "veryyoung"
+                ],
+                "tags": [
+                    "crypto",
+                    "blockchain",
+                    "NFT"
+                ],
+                "excerpt": "前言 在家人 Penny777 的推荐下知道了 YouTuber NFT阿尔法，有种相见恨晚的感觉。 花了一周时间按视频发布时间倒序看完了所有视频，受益匪浅。 做一个简单的总结，也因此得到了白名单， mint 了 NFT，现在地板价稳在 1.45 ETH。..."
+            },
+            {
                 "pagePath": "posts/suterusu-research-report.md",
                 "title": "Suterusu 研究报告",
                 "link": "posts/suterusu-research-report.html",
@@ -86,7 +121,7 @@ export default {
                 "title": "NFT 从开发到上架 Opensea 全流程",
                 "link": "posts/NFT-development-tutorial.html",
                 "date": "2021-11-30T00:00:00.000Z",
-                "updated": "2021-12-31T10:18:44.000Z",
+                "updated": "2022-03-18T13:13:53.000Z",
                 "author": "veryyoung",
                 "contributors": [
                     "veryyoung"
@@ -154,14 +189,18 @@ export default {
         "tags": [
             {
                 "name": "blockchain",
-                "count": 6
+                "count": 8
             },
             {
                 "name": "crypto",
-                "count": 6
+                "count": 8
             },
             {
                 "name": "dev",
+                "count": 2
+            },
+            {
+                "name": "NFT",
                 "count": 2
             },
             {

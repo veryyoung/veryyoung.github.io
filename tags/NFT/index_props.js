@@ -1,53 +1,53 @@
 import projectConfig from '/pagic.config.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'master' },
-    'pagePath': "tags/dev/",
+    'pagePath': "tags/NFT/",
     'layoutPath': "archives/_layout.tsx",
-    'outputPath': "tags/dev/index.html",
+    'outputPath': "tags/NFT/index.html",
     'head': null,
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "/index.js", type: "module" })),
-    'title': "dev",
+    'title': "NFT",
     'content': null,
     'blog': {
         "isPost": false,
         "posts": [
             {
-                "pagePath": "posts/NFT-presale-and-public-dev-tutorial.md",
-                "title": "NFT 预售和公售开发教程",
-                "link": "posts/NFT-presale-and-public-dev-tutorial.html",
-                "date": "2021-12-31T00:00:00.000Z",
+                "pagePath": "posts/ERC721A-analysis.md",
+                "title": "ERC721A 介绍及原理分析",
+                "link": "posts/ERC721A-analysis.html",
+                "date": "2022-04-07T00:00:00.000Z",
                 "updated": null,
                 "author": "veryyoung",
                 "contributors": [
                     "veryyoung"
                 ],
                 "tags": [
-                    "dev",
                     "crypto",
-                    "blockchain"
+                    "blockchain",
+                    "NFT"
                 ],
-                "excerpt": "上文组成了 NFT 基本的流程，一般的发售够用了，但现在主流做法是搞预售和公售。 预售可以起到给项目预热的作用，也可以在 Discord 里举办 AMA(Ask me anything) 让投资者更好的了解这个项目，项目方会有一定的要求，完成任务后..."
+                "excerpt": "介绍 ERC721A 是 Azuki 项目方研发的一个 ERC721 协议的实现，能在 mint 多个 NFT 的时候节省大量的 gas，甚至能做到 gas 成本基本与铸造单个 NFT 基本相同。 ERC721A 使用 1. 引入 ERC721A 依赖 npm install --save-dev erc72...",
+                "cover": "https://camo.githubusercontent.com/d13739d5ecfd5dc882b0cb7089a770b55f4bb1a1abf98067b94e1c21864fb261/68747470733a2f2f7062732e7477696d672e636f6d2f6d656469612f464964494c4b7056514145515f35553f666f726d61743d6a7067266e616d653d6d656469756d"
             },
             {
-                "pagePath": "posts/NFT-development-tutorial.md",
-                "title": "NFT 从开发到上架 Opensea 全流程",
-                "link": "posts/NFT-development-tutorial.html",
-                "date": "2021-11-30T00:00:00.000Z",
-                "updated": "2022-03-18T13:13:53.000Z",
+                "pagePath": "posts/summary-of-youtuber-nft-alpha.md",
+                "title": "YouTuber NFT阿尔法视频小结",
+                "link": "posts/summary-of-youtuber-nft-alpha.html",
+                "date": "2022-03-18T00:00:00.000Z",
+                "updated": null,
                 "author": "veryyoung",
                 "contributors": [
                     "veryyoung"
                 ],
                 "tags": [
-                    "dev",
                     "crypto",
-                    "blockchain"
+                    "blockchain",
+                    "NFT"
                 ],
-                "excerpt": "最近参与了很多 NFT 项目的一级市场 mint 以及交易过程，也阅读了很多 NFT 项目的合约代码，自己还没实操过，并且全网也没找到此主题的文章。 此文章边做边写，不一定是最佳实践，但所有环节是本人亲自参与过的，keep your han...",
-                "cover": "../assets/images/not_revealed_metadata.jpg"
+                "excerpt": "前言 在家人 Penny777 的推荐下知道了 YouTuber NFT阿尔法，有种相见恨晚的感觉。 花了一周时间按视频发布时间倒序看完了所有视频，受益匪浅。 做一个简单的总结，也因此得到了白名单， mint 了 NFT，现在地板价稳在 1.45 ETH。..."
             }
         ],
         "categories": [],
