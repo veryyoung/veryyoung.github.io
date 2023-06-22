@@ -11,5 +11,5 @@ const Tags = (props) => {
                 count,
                 ")")))))));
 };
-const Layout = (props) => React.createElement(LayoutBase, Object.assign({}, props, { Main: Tags }));
+const Layout = (props) => React.createElement(LayoutBase, { ...props, Main: Tags });
 export default Layout;

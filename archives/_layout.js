@@ -8,5 +8,5 @@ const Archives = (props) => {
             React.createElement("div", null,
                 React.createElement("a", { href: `${config.root}${link}` }, title))))))));
 };
-const Layout = (props) => React.createElement(LayoutBase, Object.assign({}, props, { Main: Archives }));
+const Layout = (props) => React.createElement(LayoutBase, { ...props, Main: Archives });
 export default Layout;

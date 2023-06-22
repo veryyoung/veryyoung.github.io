@@ -1,9 +1,9 @@
 import projectConfig from '/pagic.config.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'master' },
-    'pagePath': "tags/privacy/",
+    'pagePath': "tags/layer2/",
     'layoutPath': "archives/_layout.tsx",
-    'outputPath': "tags/privacy/index.html",
+    'outputPath': "tags/layer2/index.html",
     'head': null,
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@18.2.0/umd/react.production.min.js" }),
@@ -12,17 +12,17 @@ export default {
     'footer': React.createElement("footer", null,
         "Powered by\u00A0",
         React.createElement("a", { href: "https://github.com/xcatliu/pagic", target: "_blank" }, "Pagic")),
-    'title': "privacy",
+    'title': "layer2",
     'content': null,
     'blog': {
         "isPost": false,
         "posts": [
             {
-                "pagePath": "posts/suterusu-research-report.md",
-                "title": "Suterusu 研究报告",
-                "link": "posts/suterusu-research-report.html",
-                "date": "2022-01-15T00:00:00.000Z",
-                "updated": "2022-01-15T03:20:41.000Z",
+                "pagePath": "posts/optimistic-rollup-principle-analysis.md",
+                "title": "Optimistic Rollup 原理分析",
+                "link": "posts/optimistic-rollup-principle-analysis.html",
+                "date": "2023-06-22T00:00:00.000Z",
+                "updated": null,
                 "author": "veryyoung",
                 "contributors": [
                     "veryyoung"
@@ -30,9 +30,9 @@ export default {
                 "tags": [
                     "crypto",
                     "blockchain",
-                    "privacy"
+                    "layer2"
                 ],
-                "excerpt": "前言 Suterusu 是一位币圈 OG 朋友推荐给我的。 他来自传统金融领域，但在工作没多久就辞职 All in crypto，有大量的大饼在手，是曾经两个 punk 的持有者，各种新玩法他也能跟得上，并且有很独到的见解。 Suterusu 是他重仓的一..."
+                "excerpt": "前言 21 年的时候有幸帮一家基于 Optimistic Rollup 的 layer2 团队做过一段时间的事情，时间久了都快忘记了。最近工作不太忙，抽空梳理下。 简介 Layer2 Rollup 是用来做以太坊吞吐量扩容的典型方案，使用 Rollup 可以让交易发..."
             }
         ],
         "categories": [],

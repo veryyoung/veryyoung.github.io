@@ -26,6 +26,16 @@ export default {
             link: '/about/',
             icon: 'czs-about-l'
         },
+        // {
+        //   text: 'Archives',
+        //   link: '/archives/',
+        //   icon: 'czs-box-l'
+        // },
+        // {
+        //   text: 'Links',
+        //   link: '/links/',
+        //   icon: 'czs-link-l'
+        // }
     ],
     blog: {
         root: '/posts/',

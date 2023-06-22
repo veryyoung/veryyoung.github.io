@@ -9,5 +9,5 @@ const Categories = (props) => {
                 count,
                 ")")))))));
 };
-const Layout = (props) => React.createElement(LayoutBase, Object.assign({}, props, { Main: Categories }));
+const Layout = (props) => React.createElement(LayoutBase, { ...props, Main: Categories });
 export default Layout;

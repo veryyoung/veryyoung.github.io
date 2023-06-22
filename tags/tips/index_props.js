@@ -6,9 +6,12 @@ export default {
     'outputPath': "tags/tips/index.html",
     'head': null,
     'script': React.createElement(React.Fragment, null,
-        React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
-        React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
+        React.createElement("script", { src: "https://cdn.pagic.org/react@18.2.0/umd/react.production.min.js" }),
+        React.createElement("script", { src: "https://cdn.pagic.org/react-dom@18.2.0/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "/index.js", type: "module" })),
+    'footer': React.createElement("footer", null,
+        "Powered by\u00A0",
+        React.createElement("a", { href: "https://github.com/xcatliu/pagic", target: "_blank" }, "Pagic")),
     'title': "tips",
     'content': null,
     'blog': {
@@ -35,11 +38,11 @@ export default {
         "tags": [
             {
                 "name": "blockchain",
-                "count": 8
+                "count": 9
             },
             {
                 "name": "crypto",
-                "count": 8
+                "count": 9
             },
             {
                 "name": "dev",
@@ -48,6 +51,10 @@ export default {
             {
                 "name": "NFT",
                 "count": 2
+            },
+            {
+                "name": "layer2",
+                "count": 1
             },
             {
                 "name": "life",
