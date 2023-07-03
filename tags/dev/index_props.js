@@ -68,15 +68,15 @@ export default {
                 "count": 2
             },
             {
+                "name": "life",
+                "count": 2
+            },
+            {
                 "name": "NFT",
                 "count": 2
             },
             {
                 "name": "layer2",
-                "count": 1
-            },
-            {
-                "name": "life",
                 "count": 1
             },
             {

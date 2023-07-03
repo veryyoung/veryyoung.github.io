@@ -59,6 +59,21 @@ export default {
         "isPost": true,
         "posts": [
             {
+                "pagePath": "posts/japan-lasik-surgery.md",
+                "title": "日本品川眼睛近视手术过程和注意事项",
+                "link": "posts/japan-lasik-surgery.html",
+                "date": "2023-07-03T00:00:00.000Z",
+                "updated": null,
+                "author": "veryyoung",
+                "contributors": [
+                    "veryyoung"
+                ],
+                "tags": [
+                    "life"
+                ],
+                "excerpt": "前言 戴着近视眼镜各种不便，终于下定决心做了近视眼手术，记录下过程，不专业，贵在真实。 术前 打电话预约，需要日语好，不然会被拒绝。 会询问半年以内有没有做过手术、有没有戴隐形眼镜。 建议预约上午，因为当天检查做手术..."
+            },
+            {
                 "pagePath": "posts/optimistic-rollup-principle-analysis.md",
                 "title": "Optimistic Rollup 原理分析",
                 "link": "posts/optimistic-rollup-principle-analysis.html",
@@ -246,15 +261,15 @@ export default {
                 "count": 2
             },
             {
+                "name": "life",
+                "count": 2
+            },
+            {
                 "name": "NFT",
                 "count": 2
             },
             {
                 "name": "layer2",
-                "count": 1
-            },
-            {
-                "name": "life",
                 "count": 1
             },
             {
