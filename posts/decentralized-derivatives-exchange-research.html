@@ -1,0 +1,198 @@
+<!doctype html><html class=""><head>
+<meta data-react-helmet="true" charset="utf-8"/><meta data-react-helmet="true" http-equiv="x-ua-compatible" content="ie=edge"/><meta data-react-helmet="true" name="description" content="Web3 Builder&amp;Crypto Holder"/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1"/><meta data-react-helmet="true" property="og:title" content="去中心化衍生品交易所调研 · veryyoung&#x27;s blog"/><meta data-react-helmet="true" property="og:description" content="Web3 Builder&amp;Crypto Holder"/><meta data-react-helmet="true" property="og:type" content="article"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:site" content="@0xveryyoung"/>
+<title data-react-helmet="true">去中心化衍生品交易所调研 · veryyoung&#x27;s blog</title>
+<link data-react-helmet="true" rel="stylesheet" href="/assets/index.css"/><link data-react-helmet="true" id="prismTheme" rel="stylesheet" href="/assets/prism.css"/>
+<script data-react-helmet="true" >
+    const shouldSetIsDark = document.cookie.includes('is_dark=1') ? true : document.cookie.includes('is_dark=0') ? false : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (shouldSetIsDark) {
+      document.documentElement.classList.add('is_dark');
+      document.getElementById('prismTheme').href = "/assets/prism_tomorrow.css";
+    }
+  </script>
+</head><body><a class="czs-menu-l show_on_mobile aside_button_open" href="#" style="background-image:url(&quot;/assets/czs-menu-l.svg&quot;)"></a><a class="show_on_mobile aside_button_text" href="/">veryyoung&#x27;s blog</a><aside class="hide_on_mobile"><div class="aside_card"><a class="czs-menu-l show_on_mobile aside_button_close" href="#" style="background-image:url(&quot;/assets/czs-close-l.svg&quot;)"></a><h1><a href="/">veryyoung&#x27;s blog</a></h1><p class="description">Web3 Builder&amp;Crypto Holder</p><ul class="social list_style_none"><li class="flex_center"><a class="czs-github-logo" href="https://github.com/veryyoung" target="_blank" style="background-image:url(&quot;/assets/czs-github-logo.svg&quot;)"></a></li><li class="flex_center"><a class="czs-message-l" href="mailto:veryyoung.me@gmail.com" target="_blank" style="background-image:url(&quot;/assets/czs-message-l.svg&quot;)"></a></li><li class="flex_center"><a class="czs-twitter" href="https://twitter.com/0xveryyoung" target="_blank" style="background-image:url(&quot;/assets/czs-twitter.svg&quot;)"></a></li><li style="flex-grow:1"></li><li class="toggle_dark flex_center"><span class="czs-sun" style="background-image:url(&quot;/assets/czs-sun.svg&quot;)"></span><span class="czs-sun-l" style="background-image:url(&quot;/assets/czs-sun-l.svg&quot;)"></span><span class="czs-moon" style="background-image:url(&quot;/assets/czs-moon.svg&quot;)"></span><span class="czs-moon-l" style="background-image:url(&quot;/assets/czs-moon-l.svg&quot;)"></span></li></ul><nav><ul class="menu list_style_none"><li><a class="flex_center" href="/"><span class="czs-home-l" style="background-image:url(&quot;/assets/czs-home-l.svg&quot;)"></span>Home</a></li><li><a class="flex_center" href="/tags/"><span class="czs-tag-l" style="background-image:url(&quot;/assets/czs-tag-l.svg&quot;)"></span>Tags</a></li><li><a class="flex_center" href="/about/"><span class="czs-about-l" style="background-image:url(&quot;/assets/czs-about-l.svg&quot;)"></span>About</a></li></ul></nav></div><nav class="toc"><ol><li><a href="#%E5%89%8D%E8%A8%80">前言</a></li><li><a href="#%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90">项目分析</a><ol><li><a href="#dydx">dYdX</a></li><li><a href="#gmx">GMX</a></li><li><a href="#hyperliquid">Hyperliquid</a></li><li><a href="#hmx">HMX</a></li><li><a href="#synthetix">Synthetix</a></li><li><a href="#kwenta">Kwenta</a></li><li><a href="#satori">Satori</a></li><li><a href="#vertex">Vertex</a></li><li><a href="#polynomial-protocol">Polynomial Protocol</a></li><li><a href="#mux-protocol">MUX Protocol</a></li><li><a href="#%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94">方案对比</a></li></ol></li><li><a href="#%E6%80%BB%E7%BB%93">总结</a></li><li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</a></li></ol></nav></aside><section class="main"><h1>去中心化衍生品交易所调研</h1><div class="main_post_meta"><time dateTime="Mon Aug 21 2023 00:00:00 GMT+0000 (Coordinated Universal Time)">2023-08-21</time> · veryyoung</div><article><h2 id="%E5%89%8D%E8%A8%80">前言<a class="anchor" href="#%E5%89%8D%E8%A8%80">§</a></h2>
+<p>随着 Uniswap 等 DEX 的崛起以及 FTX 巨无霸交易所的倒闭，去中心化交易所越来越受到关注。</p>
+<p>衍生品交易是交易所的一个很重要的交易方向，以币安为例，过去 24H（20230821）币安现货交易额约为 40 亿美金（数据出处 <a href="https://coinmarketcap.com/zh/rankings/exchanges/">CoinMarketCap</a>），而衍生品交易额为 180 亿美金，是现货的四倍多。可见衍生品交易是比现货交易更大的市场。</p>
+<p>而去中心化交易所中 24H 交易额为 10.6 亿美金（数据出处 <a href="https://dune.com/hagaetc/dex-metrics">Dune</a>），其中衍生品交易额为 6.1 亿美金（数据出处 <a href="https://defillama.com/derivatives">Defillama</a>），占比不到 60%，而 CEX 的占比大约为 82%。</p>
+<p>从去中心化交易所与中心化交易所的衍生品交易量和交易额占比可以看出，去中心化衍生品交易所具有巨大的市场空间。</p>
+<h2 id="%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90">项目分析<a class="anchor" href="#%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90">§</a></h2>
+<p>从 <a href="https://defillama.com/derivatives">Defillama</a> 按过去 24H 交易额取 Top10 DEX 衍生品交易所进行分析。</p>
+<p>列表如下：</p>
+<ul>
+<li>dYdX</li>
+<li>GMX</li>
+<li>Hyperliquid</li>
+<li>HMX</li>
+<li>Synthetix</li>
+<li>Kwenta</li>
+<li>Satori</li>
+<li>Vertex Protocol</li>
+<li>Polynomial Protocol</li>
+<li>MUX Protocol</li>
+</ul>
+<p>由于 dYdX 和 GMX 是各自模式的开拓者，将其人工调整到了第一二位。</p>
+<h3 id="dydx">dYdX<a class="anchor" href="#dydx">§</a></h3>
+<p><a href="https://dydx.exchange/">dYdX</a> 是去基于订单簿的中心化衍生品交易平台的龙头，订单簿运行在链下的中心化服务器上，撮合引擎运行在 Starkware 上，将会转移到 Cosmos。 基于订单簿的协议对交易者的使用体验会更加友好和自然，交易滑点也更可控。也采用了类 CEX 的资金费率机制来保持合约价格与标的资产价格之间的平衡。</p>
+<p>持有 DYDX 平台币不仅可以参与平台治理，还能拥有交易手续费减免这类和 CEX 一致的用户体验。</p>
+<p>功能完善，体验类 CEX。</p>
+<p>缺点在于由于是订单薄模式，需要引入大量的做市商，且不少做市商是 dYdX 的投资方和朋友，存在操控价格、定点爆破、刷订单量获取代币等风险。</p>
+<p>为了获得更高的 TPS 和更强的去中心化性，dYdX 将会迁移到基于 Cosmos 构建的独占链上，节点验证者不光进行撮合，订单簿也运行在其中，同时项目方也将不再运行协议的任何部分，而是由社区控制，这大大增强了去中心化性。</p>
+<h3 id="gmx">GMX<a class="anchor" href="#gmx">§</a></h3>
+<p><a href="https://gmx.io/#/">GMX</a> 是一种去中心化的现货和永续交易所，特点是低交易手续费、低价格滑点，流动性由多资产池来提供，通过做市、交易费用和杠杆交易赚取流动性提供者费用。支持 Arbitrum 和 Avalanche 链。</p>
+<p>由于没有订单薄也没有 AMM 模型，GMX 的资产定价功能是由 Chainlink 预言机提供的。流动性则是由 GLP 提供的。GLP 池是一个多资产池，流动性提供者可以将资产合成 GLP 池，用户做多可以理解为从池子租借对应币种，做空则视为从池子租借稳定币。</p>
+<p>由于资产定价来自预言机，资产交易可以做到零滑点，同时 GLP 的资产利用率也大大提升，这导致流动性提供者能获取的收益率也会随之提高。</p>
+<p>目前 TVL 为 1.4 亿美金。</p>
+<h3 id="hyperliquid">Hyperliquid<a class="anchor" href="#hyperliquid">§</a></h3>
+<p><a href="https://app.hyperliquid.xyz/">Hyperliquid</a> 理念基本和 dYdX v4(迁移到 Cosmos 独占链上的思路)基本一致。</p>
+<p>同时提出了 HLP(Hyperliquidity Provider) 的概念，用户可以将资产存入 HLP 来获取收益。</p>
+<p>目前 TVL 仅有 691 万美金。</p>
+<h3 id="hmx">HMX<a class="anchor" href="#hmx">§</a></h3>
+<p><a href="https://hmx.org/arbitrum">HMX</a> 跟 GMX 比较类似，资金池叫 HLP，基于 GMX 的 GLP，流动性提供方能同时得到 GMX 和 HMX 的收益。</p>
+<p>交易手续费比 GMX 更低，明牌空投，其他没有显著特点。</p>
+<h3 id="synthetix">Synthetix<a class="anchor" href="#synthetix">§</a></h3>
+<p><a href="https://synthetix.io/">Synthetix</a> 是一个构建在以太坊和 Optimistic 上的去中心化流动性提供协议。通过质押资产合成 Synthetix Network Token（SNX）来进行流动性提供。整体机制和 GMX 比较类似。</p>
+<h3 id="kwenta">Kwenta<a class="anchor" href="#kwenta">§</a></h3>
+<p><a href="https://kwenta.eth.limo/">Kwenta</a> 运行在 Optimism 上，流动性源于 Synthetix。也采用了基于 Chainlink 的预言机提供价格报价，因此交易也无滑点。</p>
+<h3 id="satori">Satori<a class="anchor" href="#satori">§</a></h3>
+<p><a href="https://satori.finance/">Satori</a> 是一个基于订单簿的去中心化交易所，从波卡生态孵化，构建在  Polygon zkEVM、zkSync 和 Scroll，理念基本和 dYdX 一致。</p>
+<h3 id="vertex">Vertex<a class="anchor" href="#vertex">§</a></h3>
+<p><a href="https://vertexprotocol.com/">Vertex</a> 运行在 Arbitrum 上，采用订单簿与 AMM 结合的去中心化交易所。拥有订单簿交易体验好的特点，同时也拥有 AMM 去中心化解决流动性问题的优点。</p>
+<p>目前 TVL 仅有 985 万美金。</p>
+<h3 id="polynomial-protocol">Polynomial Protocol<a class="anchor" href="#polynomial-protocol">§</a></h3>
+<p><a href="https://www.polynomial.fi/">Polynomial Protocol</a> 运行在 Optimism，流动性源于 Synthetix，也使用 Chainlink 进行报价。目前正在进行 Trading Season，达到一定交易量可获得 NFT 和 ＄OP 代币的空投。</p>
+<h3 id="mux-protocol">MUX Protocol<a class="anchor" href="#mux-protocol">§</a></h3>
+<p><a href="https://mux.network/">MUX Protocol</a> 运行在 Arbitrum、BNB Chain、Optimism、Avalanche 和 Fantom 上。跟 GLP 比较类似，由质押资金池提供 MUXLP 提供流动性。属于是 GMX 的 fork，但通过对各项参数的微调，可能对大户更加友好。</p>
+<h3 id="%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94">方案对比<a class="anchor" href="#%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94">§</a></h3>
+<div class="table_wrapper"><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>运行的链</th>
+<th>定价机制</th>
+<th>流动性提供方式</th>
+<th>滑点</th>
+<th>多空调控手段</th>
+<th>去中心化程度</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dYdX</td>
+<td>目前在 Starkware，新版本会迁移到基于 Cosmos 构建的独占链上</td>
+<td>订单簿</td>
+<td>订单簿，做市商</td>
+<td>无</td>
+<td>资金费率</td>
+<td>目前订单簿在链下，做市商比较集中</td>
+<td></td>
+</tr>
+<tr>
+<td>GMX</td>
+<td>Arbitrum、Avalanche</td>
+<td>预言机</td>
+<td>GLP</td>
+<td>无</td>
+<td>资产的利用率</td>
+<td>高</td>
+<td></td>
+</tr>
+<tr>
+<td>Hyperliquid</td>
+<td>基于 Cosmos 构建的独占链上</td>
+<td>订单簿</td>
+<td>订单簿，做市商</td>
+<td>无</td>
+<td>资金费率</td>
+<td>做市商比较集中</td>
+<td></td>
+</tr>
+<tr>
+<td>HMX</td>
+<td>Arbitrum</td>
+<td>预言机</td>
+<td>HLP、GLP</td>
+<td>无</td>
+<td>资产的利用率</td>
+<td>高</td>
+<td></td>
+</tr>
+<tr>
+<td>Synthetix</td>
+<td>Optimism</td>
+<td>预言机</td>
+<td>SNX</td>
+<td>无</td>
+<td>资产的利用率</td>
+<td>高</td>
+<td></td>
+</tr>
+<tr>
+<td>Kwenta</td>
+<td>Optimism</td>
+<td>预言机</td>
+<td>Synthetix 债务池</td>
+<td>无</td>
+<td>资产的利用率</td>
+<td>高</td>
+<td></td>
+</tr>
+<tr>
+<td>Satori</td>
+<td>zkEVM、zkSync、Scroll</td>
+<td>订单簿</td>
+<td>订单簿，做市商</td>
+<td>无</td>
+<td>资金费率</td>
+<td>订单簿在链下，做市商比较集中</td>
+<td></td>
+</tr>
+<tr>
+<td>Vertex</td>
+<td>Arbitrum</td>
+<td>订单簿和 AMM</td>
+<td>订单簿和 AMM</td>
+<td>AMM 部分存在滑点</td>
+<td>资金费率</td>
+<td>订单簿在链下，做市商比较集中</td>
+<td></td>
+</tr>
+<tr>
+<td>Polynomial Protocol</td>
+<td>Optimism</td>
+<td>预言机</td>
+<td>Synthetix 债务池</td>
+<td>无</td>
+<td>资产的利用率</td>
+<td>高</td>
+<td></td>
+</tr>
+<tr>
+<td>MUX Protocol</td>
+<td>Arbitrum、BNB Chain、Optimism、Avalanche、Fantom</td>
+<td>预言机</td>
+<td>MUXLP</td>
+<td>无</td>
+<td>资产的利用率</td>
+<td>高</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="%E6%80%BB%E7%BB%93">总结<a class="anchor" href="#%E6%80%BB%E7%BB%93">§</a></h2>
+<p>目前市场上主流的去中心化衍生品交易所主要是基于订单簿和资产质押合成两种方式。</p>
+<p>基于订单簿的协议用户体验更友好（类 CEX），功能更完善，也不存在滑点。但需要做市商来提供流动性，这增大了中心化的风险。同时订单簿对底层区块链的 TPS 要求更高，导致部分协议（比如 dYdX）在以太坊和以太坊二层上无法进行流程的服务，最后不得不出走选择自建应用链，而自建应用链又会导致订单簿的存储和撮合部分不够去中心化。</p>
+<p>基于资产质押合成的协议由于资产定价来自预言机，资产交易可以做到零滑点，同时的资产利用率和流动性提供者能获取的收益率也会比较高。缺点在于由于流动性由资产质押提供，交易对比较固定，支持的交易对比较少。 由于缺乏资金费率正负的调整，多空交易容易出现一边倒的情况。</p>
+<h2 id="%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料<a class="anchor" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">§</a></h2>
+<ul>
+<li><a href="https://defillama.com/derivatives">https://defillama.com/derivatives</a></li>
+<li><a href="https://dydx.exchange/faq">https://dydx.exchange/faq</a></li>
+<li><a href="https://docs.gmx.io/docs/intro">https://docs.gmx.io/docs/intro</a></li>
+<li><a href="https://hyperliquid.gitbook.io/hyperliquid-docs/">https://hyperliquid.gitbook.io/hyperliquid-docs/</a></li>
+<li><a href="https://docs.hmx.org/hmx/">https://docs.hmx.org/hmx/</a></li>
+<li><a href="https://docs.synthetix.io/synthetix-protocol/readme">https://docs.synthetix.io/synthetix-protocol/readme</a></li>
+<li><a href="https://docs.kwenta.io/">https://docs.kwenta.io/</a></li>
+<li><a href="https://docs.satori.finance/#introduction">https://docs.satori.finance/#introduction</a></li>
+<li><a href="https://vertex-protocol.gitbook.io/docs/getting-started/overview">https://vertex-protocol.gitbook.io/docs/getting-started/overview</a></li>
+<li><a href="https://docs.trade.polynomial.fi/">https://docs.trade.polynomial.fi/</a></li>
+<li><a href="https://docs.mux.network/protocol/overview">https://docs.mux.network/protocol/overview</a></li>
+</ul></article></section><footer>Powered by&amp;nbsp;<a href="https://github.com/xcatliu/pagic" target="_blank">Pagic</a></footer><script src="https://cdn.pagic.org/react@18.2.0/umd/react.production.min.js"></script><script src="https://cdn.pagic.org/react-dom@18.2.0/umd/react-dom.production.min.js"></script><script type="module" src="/index.js"></script></body></html>

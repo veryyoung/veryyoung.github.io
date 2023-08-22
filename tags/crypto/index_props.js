@@ -18,6 +18,23 @@ export default {
         "isPost": false,
         "posts": [
             {
+                "pagePath": "posts/decentralized-derivatives-exchange-research.md",
+                "title": "去中心化衍生品交易所调研",
+                "link": "posts/decentralized-derivatives-exchange-research.html",
+                "date": "2023-08-21T00:00:00.000Z",
+                "updated": null,
+                "author": "veryyoung",
+                "contributors": [
+                    "veryyoung"
+                ],
+                "tags": [
+                    "crypto",
+                    "blockchain",
+                    "DEX"
+                ],
+                "excerpt": "前言 随着 Uniswap 等 DEX 的崛起以及 FTX 巨无霸交易所的倒闭，去中心化交易所越来越受到关注。 衍生品交易是交易所的一个很重要的交易方向，以币安为例，过去 24H（20230821）币安现货交易额约为 40 亿美金（数据出处 CoinMa..."
+            },
+            {
                 "pagePath": "posts/optimistic-rollup-principle-analysis.md",
                 "title": "Optimistic Rollup 原理分析",
                 "link": "posts/optimistic-rollup-principle-analysis.html",
@@ -178,11 +195,11 @@ export default {
         "tags": [
             {
                 "name": "blockchain",
-                "count": 9
+                "count": 10
             },
             {
                 "name": "crypto",
-                "count": 9
+                "count": 10
             },
             {
                 "name": "dev",
@@ -195,6 +212,10 @@ export default {
             {
                 "name": "NFT",
                 "count": 2
+            },
+            {
+                "name": "DEX",
+                "count": 1
             },
             {
                 "name": "layer2",

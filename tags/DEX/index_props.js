@@ -1,9 +1,9 @@
 import projectConfig from '/pagic.config.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'master' },
-    'pagePath': "tags/privacy/",
+    'pagePath': "tags/DEX/",
     'layoutPath': "archives/_layout.tsx",
-    'outputPath': "tags/privacy/index.html",
+    'outputPath': "tags/DEX/index.html",
     'head': null,
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@18.2.0/umd/react.production.min.js" }),
@@ -12,17 +12,17 @@ export default {
     'footer': React.createElement("footer", null,
         "Powered by\u00A0",
         React.createElement("a", { href: "https://github.com/xcatliu/pagic", target: "_blank" }, "Pagic")),
-    'title': "privacy",
+    'title': "DEX",
     'content': null,
     'blog': {
         "isPost": false,
         "posts": [
             {
-                "pagePath": "posts/suterusu-research-report.md",
-                "title": "Suterusu 研究报告",
-                "link": "posts/suterusu-research-report.html",
-                "date": "2022-01-15T00:00:00.000Z",
-                "updated": "2022-01-15T03:20:41.000Z",
+                "pagePath": "posts/decentralized-derivatives-exchange-research.md",
+                "title": "去中心化衍生品交易所调研",
+                "link": "posts/decentralized-derivatives-exchange-research.html",
+                "date": "2023-08-21T00:00:00.000Z",
+                "updated": null,
                 "author": "veryyoung",
                 "contributors": [
                     "veryyoung"
@@ -30,9 +30,9 @@ export default {
                 "tags": [
                     "crypto",
                     "blockchain",
-                    "privacy"
+                    "DEX"
                 ],
-                "excerpt": "前言 Suterusu 是一位币圈 OG 朋友推荐给我的。 他来自传统金融领域，但在工作没多久就辞职 All in crypto，有大量的大饼在手，是曾经两个 punk 的持有者，各种新玩法他也能跟得上，并且有很独到的见解。 Suterusu 是他重仓的一..."
+                "excerpt": "前言 随着 Uniswap 等 DEX 的崛起以及 FTX 巨无霸交易所的倒闭，去中心化交易所越来越受到关注。 衍生品交易是交易所的一个很重要的交易方向，以币安为例，过去 24H（20230821）币安现货交易额约为 40 亿美金（数据出处 CoinMa..."
             }
         ],
         "categories": [],

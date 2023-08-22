@@ -55,11 +55,11 @@ export default {
         "tags": [
             {
                 "name": "blockchain",
-                "count": 9
+                "count": 10
             },
             {
                 "name": "crypto",
-                "count": 9
+                "count": 10
             },
             {
                 "name": "dev",
@@ -72,6 +72,10 @@ export default {
             {
                 "name": "NFT",
                 "count": 2
+            },
+            {
+                "name": "DEX",
+                "count": 1
             },
             {
                 "name": "layer2",
